@@ -24,6 +24,7 @@ const getKeyType = key => {
   return action
 }
 
+// Constucts the result string according to the key pressed he current displayed number, and the calculator's state
 const createResultString = (key, displayedNum, state) => {
   const keyContent = key.textContent
   const keyType = getKeyType(key)
@@ -67,7 +68,7 @@ const createResultString = (key, displayedNum, state) => {
       : displayedNum
   }
 }
-
+// updates the state of calculator based on the key pressed by modifying dataset
 const updateCalculatorState = (key, calculator, calculatedValue, displayedNum) => {
   const keyType = getKeyType(key)
   const {
@@ -103,6 +104,7 @@ const updateCalculatorState = (key, calculator, calculatedValue, displayedNum) =
   }
 }
 
+// updates the visual state of the calculator based on the key pressed
 const updateVisualState = (key, calculator) => {
   const keyType = getKeyType(key)
   Array.from(key.parentNode.children).forEach(k => k.classList.remove('is-depressed'))

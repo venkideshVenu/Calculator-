@@ -1,68 +1,40 @@
 
-/* Responsive Images */
 
-embed,
-iframe,
-img,
-object,
-video {
+/* Set the maximum width of media elements to 100% of the container*/
+embed,iframe,img,object,video {
   max-width: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-ol,
-li,
-p,
-pre,
-blockquote,
-figure,
-hr {
+/*Removes the margins and paddings from headings, lists, paragraphs, preformatted test, 
+blockquote, figures and horizontal rules.
+it ensures that images and videos resize approximately on different screen sizes*/
+h1,h2,h3,h4,h5,h6,ul,ol,li,p,pre,blockquote,figure,hr {
   margin: 0;
   padding-right: 0;
   padding-left: 0;
 }
-
+/*Removes the default umderline decoration of anchor tag*/
 a {
   text-decoration: none;
 }
-
+/* Removes the focus outline from anchored element when they clicked*/
 a:focus {
   outline: none;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Forces headlines to behave as block-level elements */
+h1,h2,h3,h4,h5,h6 {
   display: block;
 }
 
-/* Removes all decimals and discs from lists */
-
-ol,
-ul {
+/* Removes the default list styles such as discs or decimals from ordered and unordered lists*/
+ol,ul {
   list-style: none;
 }
 
-/* 
- * Completely resets form items
- * ----------------------------
- * Super hard reset that removes all borders
- * and radiuses of all form items (including
- * checkboxes and radios)
- */
 
-input,
-textarea,
-button {
+/* Resets form elements by removing borders, its radius etc and outline to none. This ensures consistent 
+styling across different browsers and OS*/
+input,textarea,button {
   border: 0;
   border-radius: 0;
   background-color: transparent;
@@ -86,6 +58,7 @@ button:focus {
   outline: none;
 }
 
+/* Set the default font family for root element ans html element */
 :root {
   font-family: Helvetica, Arial, sans-serif;
 }
@@ -96,14 +69,18 @@ html {
   line-height: 1.3;
 }
 
+/* Centers the content and set bg image*/
 body {
-  align-items: center;
-  background-image: linear-gradient(236deg, #e75f9e, #7084e0);
-  display: flex;
-  height: 100vh;
-  justify-content: center;
+  background: linear-gradient(to bottom right, #87CEEB, #FFB6C1); /* Gradient background */
+  font-family: 'Helvetica Neue', sans-serif; /* Elegant font family */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  height: 100vh; /* Ensure full viewport height */
 }
-
+/* Set styles for calculator interface display area and operator keys*/
 .container {
   max-width: 20em;
 }
@@ -123,8 +100,9 @@ body {
 }
 
 .calculator__display {
-  background-color: #222222;
+  background-color: #384241;
   color: #fff;
+
   font-size: 1.714285714em;
   padding: 0.5em 0.75em;
   text-align: right;
@@ -138,7 +116,7 @@ body {
 }
 
 .calculator__keys > * {
-  background-color: #fff;
+  background-color: #eef8e1;
   padding: 0.5em 1.25em;
   position: relative;
   text-align: center;
@@ -148,7 +126,7 @@ body {
 .calculator__keys > .is-depressed::before {
   background-color: rgba(0, 0, 0, 0.2);
   bottom: 0;
-  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 0 6px 0 #fdfcdc inset;
   content: "";
   left: 0;
   opacity: 0.3;
@@ -159,11 +137,35 @@ body {
 }
 
 .key--operator {
-  background-color: #eee;
+  background-color: #ffddd2;
 }
 
 .key--equal {
-  background-image: linear-gradient(to bottom, #fe886a, #ff7033);
+  background-image: linear-gradient(to bottom, #e29578, #e29578);
   grid-column: -2;
   grid-row: 2 / span 4;
+}
+
+
+h1.title {
+  position: absolute;
+  left:10%;
+  top:10%;
+  font-family: 'Merriweather', serif;
+  font-size: 1.5em; /* Example font size */
+  color: #5e4acf; /* Example color */
+  text-align: center; /* Center align the text */
+  letter-spacing: 2px; /* Add spacing between letters */
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Add a subtle text shadow */
+}
+
+/* Animation for the title */
+@keyframes titleAnimation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+h1.title:hover {
+  animation: titleAnimation 0.5s infinite alternate; /* Apply animation on hover */
 }
